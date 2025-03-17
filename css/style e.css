@@ -1,0 +1,31 @@
+body {
+    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+#hoverText {
+    display: inline-block; /*alleen de tekst*/
+    cursor: pointer; /*interactiviteit*/
+    padding: 5px;
+    text-decoration: underline;
+    /*background-color: rgba(0, 0, 0, 0); */
+}
+
+#hond {
+    display: none; /* Hond blijft verborgen tot hover */
+    width: 150px;
+    position: absolute;
+    left: 50%;
+    top: 60%;
+    transform: translate(-50%, -50%);
+}
+
+#blikje {
+    width: 50px;
+    position: absolute;
+    left: 52%;
+    top: 65%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
