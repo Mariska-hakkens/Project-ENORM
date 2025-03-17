@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
         blikje.style.display = "block";
 
         setTimeout(function () {
-            alert("De hond drinkt het blikje EnoRm leeg...");
+            alert("De hond drinkt het blikje EnoRm leeg");
             window.location.href = "https://fightclub.nl";
         }, 2000);
     });
