@@ -1,26 +1,33 @@
 body {
-    background-color: #f2f2f2;
+    background: url("../images/websiteenorm.png") no-repeat top center;
+    background-size: cover; /* Zorg ervoor dat de achtergrond altijd het hele scherm bedekt */
     font-family: Arial, sans-serif;
     text-align: center;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh; /* Zorg ervoor dat de body altijd minimaal de hoogte van de viewport heeft */
 }
 
 #hoverText {
-    display: inline-block; /*alleen de tekst*/
-    cursor: pointer; /*interactiviteit*/
+    color: #974951; /* Zorgt ervoor dat de tekst niet wegvalt */
+    text-shadow: 0px 0px 8px #f87d89, 0px 0px 15px #f87d89, 0px 0px 25px #f87d89;
+    display: inline-block;
+    cursor: pointer;
     padding: 5px;
+    margin-top: 50px;
     text-decoration: underline;
-    /*background-color: rgba(0, 0, 0, 0); */
 }
 
 #hond {
-    display: none; /* Hond blijft verborgen tot hover */
+    display: none; /* Blijft verborgen tot de geheime actie */
     width: 150px;
     position: absolute;
     left: 50%;
     top: 60%;
     transform: translate(-50%, -50%);
+    filter: drop-shadow(0px 0px 10px #f87d89); /* Rode gloed om de hond */
 }
-
+    
 #blikje {
     width: 50px;
     position: absolute;
@@ -28,4 +35,46 @@ body {
     top: 65%;
     transform: translate(-50%, -50%);
     display: none;
+}
+
+/*boer*/
+#burpText {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 100px;
+    color: white;
+    text-shadow: 0px 0px 8px #f87d89, 0px 0px 15px #f87d89, 0px 0px 25px #f87d89;
+    font-weight: bold;
+    animation: burpAnim 3s ease-in-out forwards; /* Animatie voor het tekstwolkje */
+}
+
+/* drinken van blikje */
+@keyframes drinken {
+    0%, 100% { transform: translate(-50%, -50%) rotate(0deg); } /*hond rechtop*/
+    25% { transform: translate(-50%, -50%) rotate(-10deg); } 
+    50% { transform: translate(-50%, -50%) rotate(0deg); }
+    75% { transform: translate(-50%, -50%) rotate(-10deg); }
+}
+
+@keyframes burpAnim {
+    0% { opacity: 0; transform: translate(-50%, -50%) scale(1); }
+    50% { opacity: 1; transform: translate(-50%, -60%) scale(1.2); } /* Het wolkje groeit een beetje */
+    100% { opacity: 0; transform: translate(-50%, -70%) scale(0.8); } /* Het wolkje verdwijnt */
+}
+
+/* Blikje beweegt naar de mond en wordt kleiner */
+@keyframes blikjeNaarMond {
+    0% { top: 65%; transform: scale(1); opacity: 1; }
+    50% { top: 55%; transform: scale(0.8); opacity: 1; }
+    100% { top: 50%; transform: scale(0.2); opacity: 0; }
+}
+
+/*spugen*/
+@keyframes blikjeSpugen {
+    0% { top: 60%; left: 52%; transform: scale(1); opacity: 1; }
+    50% { top: 50%; left: 50%; transform: scale(2); opacity: 1; } /* Het blikje wordt groter e */
+    100% { top: 10%; left: 50%; transform: scale(10); opacity: 1; } /* Het blikje wordt veel groter en vult het scherm */
 }
