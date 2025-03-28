@@ -10,13 +10,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const blikjeWidth = 50;
     
     // Bereken de ruimte tussen de blikjes
-    const spacing = (containerWidth - 3 * blikjeWidth) / 4; // Ruimte tussen de blikjes
+    const spacing = (containerWidth - 3 * blikjeWidth) / 4; 
     
-    // Bereken de posities voor de blikjes zodat ze gecentreerd staan in de container
     const positions = [
         { left: spacing, top: 200 },  // Links
-        { left: spacing + blikjeWidth + spacing, top: 200 }, // Midden
-        { left: spacing + 2 * (blikjeWidth + spacing), top: 200 } // Rechts
+        { left: spacing + blikjeWidth + spacing, top: 200 },
+        { left: spacing + 2 * (blikjeWidth + spacing), top: 200 }
     ];
 
     // Willekeurige positie voor de hond
@@ -37,10 +36,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
         blikje.addEventListener("click", function () {
             if (blikje === dogBlikje) {
-                message.textContent = "Je hebt de hond gevonden! 🐶";
+                message.textContent = "Je hebt de hond gevonden!";
                 setTimeout(() => {
-                    window.location.href = "https://www.fightclub.com"; // Stuur door naar Fight Club website
-                }, 2000); // Na 2 seconden doorgaan naar de website
+                    window.location.href = "https://www.fightclub.nl"; 
+                }, 5000); 
             } else {
                 message.textContent = "Helaas, probeer het opnieuw!";
             }
@@ -49,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Functie voor het wisselen van de posities van de blikjes
     function shuffle() {
-        // Willekeurige volgorde van de blikjes
+        //Willekeurige volgorde van de blikjes
         positions.sort(() => Math.random() - 0.5);
 
         blikjes.forEach((blikje, index) => {
@@ -60,9 +59,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Snellere en langere shuffles
-    let shuffleInterval = setInterval(shuffle, 500); // Snellere shuffles (om de 500ms)
+    let shuffleInterval = setInterval(shuffle, 500); 
     setTimeout(() => {
-        clearInterval(shuffleInterval); // Stop de shuffles na 7 seconden
-        message.textContent = "Kies een blikje!";
+        clearInterval(shuffleInterval); 
     }, 4000);
 });

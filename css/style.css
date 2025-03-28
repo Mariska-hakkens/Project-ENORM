@@ -53,6 +53,23 @@ h1, p {
     transform: rotate(90deg); /* Blikjes blijven verticaal staan */
 }
 
+#message {
+    color: #974951;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 3px 3px 6px #f87d89;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    display: inline-block;
+    position: absolute; /* Maak het positioneerbaar */
+    bottom: 20px; /* Zet het bovenaan de container */
+    left: 50%;
+    transform: translateX(-50%); /* Centreer het bericht horizontaal */
+    z-index: 10; /* Zorg ervoor dat het boven de blikjes staat */
+}
+
+
 .dog {
     width: 30px;
     height: 30px;
