@@ -1,0 +1,69 @@
+body {
+    background: url("../images/websiteenorm.png") no-repeat top center;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+.center-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+.game-container {
+    display: flex;
+    justify-content: space-between; /* Evenly spaced items */
+    position: relative;
+    width: 50%; /* Zet de breedte van de container op 50% van het scherm */
+    height: 150px;
+    margin: 0 auto; /* Centraal op de pagina */
+    color: white;
+    position: relative;
+    top: 50%; /* Zet de container verticaal in het midden van de pagina */
+    transform: translateY(-50%); /* Zorgt ervoor dat de container precies in het midden staat */
+}
+
+h1, p {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    text-shadow: 2px 2px 4px #f87d89;
+}
+
+.blikje {
+    width: 50px;
+    height: 100px;
+    background-color: #8B4513;
+    border-radius: 10px;
+    position: absolute;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.5s ease-in-out;
+    transform-origin: center;
+    transform: rotate(90deg); /* Blikjes blijven verticaal staan */
+}
+
+.dog {
+    width: 30px;
+    height: 30px;
+    background: url('hondje.png') no-repeat center;
+    background-size: cover;
+    position: absolute;
+    bottom: -30px; /* Onder de blikjes */
+    visibility: hidden; /* Hondje onzichtbaar totdat het onthuld wordt */
+    z-index: -1; /* Achter de blikjes */
+}
+
+.blikje:nth-child(1) { left: 50px; }
+.blikje:nth-child(2) { left: 150px; }
+.blikje:nth-child(3) { left: 250px; }

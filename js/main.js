@@ -10,8 +10,6 @@ document.addEventListener("DOMContentLoaded", function () {
     let klikTeller = 0; // Aantal keer geklikt
     let hovered = false; // Var om bij te houden of de tekst is gehoverd
     let isDrinkenVoltooid = false; // Var om bij te houden of het drinken voltooid is
-    let positiehondje = 0;
-    let score = 0;
 
     if (!hoverText || !hond || !blikje || !burpText) {
         console.error("Eén of meer elementen niet gevonden!");
@@ -56,10 +54,11 @@ document.addEventListener("DOMContentLoaded", function () {
             // Het tekstwolkje met "Burp!" verschijnt wanneer de boer begint
             burpText.style.display = "block"; // Maak het tekstwolkje zichtbaar
 
-            // Na de animatie wordt de gebruiker doorgestuurd naar FightClub
-            setTimeout(function () {
-                window.location.href = "https://fightclub.nl"; //stuur door naar fightclubwebsite
-            }, 6000); // Wacht tot de animatie klaar is voordat je doorstuurt naar FightClub
+            setTimeout(() => {
+                console.log("Doorschakelen naar Balletje Balletje...");
+                window.location.href = "spel.html";
+            }, 6000);
+            
         }
     });
 });
